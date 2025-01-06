@@ -3,34 +3,13 @@
 
 <head>
     @include('admin/metadata')
-
-    <style>
-        .div-center {
-            text-align: center;
-            padding-top: 40px;
-        }
-
-        .h2-font {
-            font-size: 40px;
-            padding-bottom: 40px;
-        }
-
-        .input-color {
-            color: #000;
-        }
-
-    </style>
 </head>
 
 <body>
     <div class="container-scroller">
-
         @include('admin/sidebar')
-
         <div class="container-fluid page-body-wrapper">
-
             @include('admin/header')
-
             <div class="main-panel">
                 <div class="content-wrapper">
 
@@ -51,14 +30,26 @@
                             <input type="submit" class="btn btn-primary" name="submit" value="Add Category">
                         </form>
                     </div>
+
+                    <table class="center">
+                        <tr>
+                            <td>Category Name</td>
+                            <td>Action</td>
+                        </tr>
+                        @foreach($data as $data)
+
+                        <tr>
+                            <td>{{ $data->category_name }}</td>
+                            <td><a onclick="return confirm('Você quer mesmo deletar a categoria: {{ $data->category_name }} .')" class="btn btn-danger" href="{{ url('delete_category', $data->id) }}">Delete</a></td>
+                        </tr>
+
+                        @endforeach
+                    </table>
+
                 </div>
             </div>
-
-
         </div>
-
     </div>
-
     @include('admin/scripts')
 </body>
 
