@@ -64,4 +64,40 @@ class AdminController extends Controller
 
         return redirect()->back()->with('msg', 'Produto adicionado com sucesso!');
     }
+
+    public function delete_product($id) {
+        $data = product::find($id);
+        $data->delete();
+
+        return redirect()->back()->with('msg', 'Produto deletado com sucesso.');
+    }
+
+    public function edit_product($id) {
+        $product = product::find($id);
+        $category = category::all();
+
+        return view('admin.update_product', compact('product', 'category'));
+    }
+
+    public function edit_product_confirm(Request $request, $id) {
+        $product = product::find($id);
+
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->quantity = $request->quantity;
+        $product->discount_price = $request->discount;
+        $product->category = $request->category;
+
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            $image = $request->file('image');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('product'), $imageName);
+            $product->image = $imageName;
+        }
+
+        $product->save();
+
+        return redirect()->route('view_product')->with('msg', 'Produto editado com sucesso!');
+    }
 }

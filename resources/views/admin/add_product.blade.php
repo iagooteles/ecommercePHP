@@ -14,15 +14,14 @@
 
             @include('admin/header')
 
-
             <div class="main-panel">
                 <div class="content-wrapper">
-                    
+
                     @if(session()->has('msg'))
-                        <div class="alert alert-success">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true" >x</button>
-                            {{ session()->get('msg') }}
-                        </div>
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                        {{ session()->get('msg') }}
+                    </div>
                     @endif
 
                     <div class="div-center">
@@ -68,8 +67,10 @@
                             </div>
 
                             <div class="label-container">
-                                <label for="">Imagem: </label>
-                                <input type="file" name="image" required>
+                                <label class="img-label" for="">Imagem: </label>
+                                <input id="image-upload" class="choose-image-input" type="file" name="image" required onchange="updateFileName(this)">
+                                <p></p>
+                                <span id="file-name" class="file-name-feedback">Nenhuma imagem selecionada</span>
                             </div>
 
                             <div class="label-container">
@@ -80,11 +81,15 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
     @include('admin/scripts')
 </body>
+<script>
+    function updateFileName(input) {
+        var fileName = input.files.length > 0 ? input.files[0].name : "Nenhuma imagem selecionada";
+        document.getElementById("file-name").textContent = fileName;
+    }
+</script>
 
 </html>

@@ -16,6 +16,13 @@
 
             <div class="main-panel">
                 <div class="content-wrapper">
+                    @if(session()->has('msg'))
+                    <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                        {{ session()->get('msg') }}
+                    </div>
+                    @endif
+
                     <table class="center w-75">
                         <h2 class="h2-font div-center">Produtos</h2>
 
@@ -27,6 +34,8 @@
                             <th class="th-products">Preço</th>
                             <th class="th-products">Desconto</th>
                             <th class="th-products">Imagem</th>
+                            <th class="th-products">Deletar</th>
+                            <th class="th-products">Editar</th>
                         </tr>
 
                         @foreach($data as $product)
@@ -42,10 +51,28 @@
                                 <button
                                     type="button"
                                     class="text-white px-4 py-2 rounded"
-                                    style="text-decoration: underline;" 
+                                    style="text-decoration: underline;"
                                     onclick="openModal('{{ $product->title }}', '/product/{{ $product->image }}')">
                                     Ver Imagem
                                 </button>
+                            </td>
+
+                            <td>
+                                <a 
+                                    href="{{ url('delete_product', $product->id) }}" 
+                                    class="btn btn-danger"
+                                    onclick="return confirm('Você quer mesmo deletar {{ $product->title }}')"
+                                >
+                                    Deletar
+                                </a>
+                            </td>
+                            <td>
+                                <a 
+                                    href="{{ url('edit_product', $product->id) }}" 
+                                    class="btn btn-success"
+                                >
+                                    Editar
+                                </a>
                             </td>
                         </tr>
                         @endforeach
@@ -53,10 +80,12 @@
                         <div
                             id="imageModal"
                             class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden"
-                            onclick="closeModal(event)">
+                            onclick="closeModal(event)"
+                        >
                             <div
                                 class="bg-white rounded-lg p-4 relative w-96 max-w-full"
-                                onclick="event.stopPropagation()">
+                                onclick="event.stopPropagation()"
+                            >
                                 <button
                                     type="button"
                                     class="absolute top-2 right-2 text-gray-500 hover:text-black text-2xl font-bold"

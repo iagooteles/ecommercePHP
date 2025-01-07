@@ -11,6 +11,7 @@
 
 .div-center input {
     color: #000;
+    border-radius: 8px;
 }
 
 .div-center select {
@@ -41,10 +42,61 @@
 label {
     display: inline-block;
     width: 300px;
+    text-align: left;
+}
+
+.img-label {
+    text-align: left;
+    width: 310px;
 }
 
 .label-container {
     padding-bottom: 20px;
+}
+
+.label-container button {
+    background-color: #fff;
+    padding: 2px 20px;
+    border-radius: 4px;
+    color: #000;
+
+    transition: all ease-in-out .3s;
+}
+
+.label-container button:hover {
+    background-color: #ffffff25;
+    color: #fff;
+}
+
+.choose-image-input {
+    width: 135px;
+    display: inline-block;
+    padding: 40px;
+    margin-left: 50px;
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.file-name-feedback {
+    color: #fff;
+    font-size: 14px;
+    font-style: italic;
+    margin-top: 8px;
+    width: 120px;
+}
+.show-image-container {
+    padding-top: 40px;
+    text-align: center;
+}
+
+.label-container select {
+    width: 200px;
+    border-radius: 8px;
 }
 
 .tr-products {
