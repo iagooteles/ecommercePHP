@@ -10,6 +10,7 @@ use App\Models\Product;
 
 class AdminController extends Controller
 {
+
     public function category() {
         $data = category::all();
 
@@ -34,7 +35,9 @@ class AdminController extends Controller
     }
 
     public function view_product() {
-        return view('admin.product');
+        $data = product::all();
+
+        return view('admin.view_product', compact('data'));
     }
 
     public function add_product_page() {

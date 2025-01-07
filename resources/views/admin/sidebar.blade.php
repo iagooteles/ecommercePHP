@@ -12,7 +12,7 @@
                         <span class="count bg-success"></span>
                     </div>
                     <div class="profile-name">
-                        <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
+                        <h5 class="mb-0 font-weight-normal">Admin</h5>
                         <span>Gold Member</span>
                     </div>
                 </div>
@@ -69,13 +69,13 @@
                 <span class="menu-icon">
                     <i class="mdi mdi-laptop"></i>
                 </span>
-                <span class="menu-title">Products</span>
+                <span class="menu-title">Produtos</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{ url('/add_product') }}">Add Products</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{ url('/view_product') }}">Show Product</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/add_product') }}">Adicionar Produto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/view_product') }}">Mostrar Produtos</a></li>
                 </ul>
             </div>
         </li>
@@ -84,7 +84,7 @@
                 <span class="menu-icon">
                     <i class="mdi mdi-playlist-play"></i>
                 </span>
-                <span class="menu-title">Category</span>
+                <span class="menu-title">Categorias</span>
             </a>
         </li>
     </ul>
