@@ -1121,6 +1121,8 @@ form input[type="submit"]:focus {
     font-weight: 400;
 }
 
+/** Pagination **/
+
 .pagination {
   margin-top: 20px;
   display: flex;
@@ -1162,3 +1164,19 @@ form input[type="submit"]:focus {
   background-color: #e9ecef;
   border-color: #dee2e6;
 }
+
+/* Product container  */
+
+.product-container {
+  margin: auto;
+  width: 50%;
+  padding: 30px;
+}
+
+.img-container img {
+  height: 400px;
+  width: 400px;
+  object-fit: fill;
+  padding: 20px;
+}
+
