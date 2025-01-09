@@ -1120,3 +1120,45 @@ form input[type="submit"]:focus {
     font-size: 15px;
     font-weight: 400;
 }
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination p {
+  display: none;
+}
+
+.pagination .page-item {
+  margin: 0 5px;
+}
+
+.pagination .page-link {
+  color: #007bff;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  padding: 8px 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.pagination .page-link:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.pagination .page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
