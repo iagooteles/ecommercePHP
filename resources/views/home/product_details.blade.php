@@ -53,7 +53,17 @@
             <h6>Detalhes: {{ $product->description }}</h6>
             <h6>Quantidade: {{ $product->quantity }}</h6>
 
-            <a href="" class="btn btn-primary">Adicionar ao carrinho</a>
+            <form action="{{ url('add_to_cart', $product->id) }}" method="POST">
+                @csrf
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        <input class="w-25" type="number" name="quantity" value="1" min="1">
+                    </div>
+                    <div>
+                        <input type="submit" value="Adicionar ao carrinho">
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 

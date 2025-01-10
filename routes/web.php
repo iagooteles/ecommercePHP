@@ -39,3 +39,5 @@ route::get('/edit_product/{id}', [AdminController::class, 'edit_product']);
 route::post('/edit_product_confirm/{id}', [AdminController::class, 'edit_product_confirm']);
 
 route::get('/product_details/{id}', [HomeController::class, 'product_details']);
+
+route::post('/add_to_cart/{id}', [HomeController::class, 'add_to_cart']);

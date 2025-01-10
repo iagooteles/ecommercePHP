@@ -11,12 +11,22 @@
                 <div class="box">
                     <div class="option_container">
                         <div class="options">
-                            <a href="{{ url('product_details', $product->id) }}" class="option1">  
+                            <a href="{{ url('product_details', $product->id) }}" class="option1">
                                 Detalhes
                             </a>
-                            <a href="" class="option2">
-                                Comprar
-                            </a>
+
+                            <form action="{{ url('add_to_cart', $product->id) }}" method="POST">
+                                @csrf
+                                <div class="col">
+                                    <div class="d-flex justify-content-center">
+                                        <input class="w-25" type="number" name="quantity" value="1" min="1">
+                                    </div>
+                                    <div>
+                                        <input type="submit" value="Adicionar ao carrinho">
+                                    </div>
+                                </div>
+                            </form>
+
                         </div>
                     </div>
                     <div class="img-box">
