@@ -1187,7 +1187,7 @@ form input[type="submit"]:focus {
     padding: 20px;
 }
 
-/* product table */
+/* cart */
 
 .th-deg {
     font-size: 30px;
@@ -1202,4 +1202,14 @@ form input[type="submit"]:focus {
 .total-price-cart {
     padding: 40px;
     font-size: 25px;
+}
+
+.finish-order-h2 {
+    font-size: 25px;
+    padding-bottom: 15px;
+}
+
+.stripe-payment-h1 {
+    align-items: center;
+    padding-top: 40px;
 }

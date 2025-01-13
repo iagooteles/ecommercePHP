@@ -26,6 +26,13 @@
 <body>
     @include('home.header')
 
+    @if(session()->has('msg'))
+    <div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+        {{ session()->get('msg') }}
+    </div>
+    @endif
+
     <div class="d-flex justify-content-center align-items-center py-10">
         <table class="table table-bordered w-50 mt-5">
             <thead>
@@ -38,29 +45,37 @@
                 </tr>
             </thead>
             <tbody>
-                <?php 
-                    $totalPrice = 0; 
+                <?php
+                $totalPrice = 0;
                 ?>
                 @foreach($cart as $cart)
-                    <tr>
-                        <td>{{ $cart->product_title }}</td>
-                        <td>{{ $cart->product_quantity }}</td>
-                        <td>${{ $cart->product_price }}</td>
-                        <td><img class="img-cart" src="/product/{{ $cart->product_image }}" alt="{{ $cart->product_title }}"></td>
-                        <td><a class="btn btn-danger" href="{{ url('remove_cart', $cart->id) }}" onclick="return confirm('Você quer mesmo remover {{ $cart->product_title }}}?')">Remover produto</a></td>
-                    </tr>
+                <tr>
+                    <td>{{ $cart->product_title }}</td>
+                    <td>{{ $cart->product_quantity }}</td>
+                    <td>${{ $cart->product_price }}</td>
+                    <td><img class="img-cart" src="/product/{{ $cart->product_image }}" alt="{{ $cart->product_title }}"></td>
+                    <td><a class="btn btn-danger" href="{{ url('remove_cart', $cart->id) }}" onclick="return confirm('Você quer mesmo remover {{ $cart->product_title }}}?')">Remover produto</a></td>
+                </tr>
 
-                    <?php
-                        $totalPrice += $cart->product_price ; 
-                    ?>
+                <?php
+                $totalPrice += $cart->product_price;
+                ?>
                 @endforeach
-                
             </tbody>
         </table>
 
     </div>
+
     <div class="d-flex justify-content-center align-items-center">
         <h2 class="total-price-cart">Total Price: ${{ $totalPrice }}</h2>
+    </div>
+
+    <div class="d-flex flex-column justify-content-center align-items-center py-4">
+        <h2 class="finish-order-h2">Finalizar pedido</h2>
+        <div>
+            <a class="btn btn-danger" href="{{ url('cash_order') }}">Pagar com dinheiro</a>
+            <a class="btn btn-danger" href="{{ url('card_order', $totalPrice) }}">Pagar com cartão</a>
+        </div>
     </div>
 
 

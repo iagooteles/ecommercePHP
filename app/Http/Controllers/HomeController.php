@@ -1,16 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Auth;
-
 use App\Models\User;
-
 use App\Models\Product;
-
 use App\Models\Cart;
+use App\Models\Order;
+
+// stripe
+use Illuminate\Support\Facades\Session;
+
+// use Session;
+use Stripe;
 
 class HomeController extends Controller
 {
@@ -84,5 +86,88 @@ class HomeController extends Controller
         $cart->delete();
 
         return redirect()->back()->with('msg', 'Deletado com sucesso!');
+    }
+
+    public function cash_order() {
+        $user = Auth::user();
+        $userID = $user->id;
+
+        $data = cart::where('user_id', '=', $userID)->get();
+
+        foreach($data as $data) {
+            $order = new order();
+
+            $order->name = $data->user_name;
+            $order->email = $data->user_email;
+            $order->phone = $data->user_phone;
+            $order->address = $data->user_address;
+            $order->user_id = $data->user_id;
+            
+            $order->product_title = $data->product_title;
+            $order->product_quantity = $data->product_quantity;
+            $order->product_price = $data->product_price;
+            $order->product_image = $data->product_image;
+            $order->product_id = $data->product_id;
+
+            $order->payment_status = 'cash';
+            $order->delivery_status = 'processando';
+            
+            $order->save();
+
+            $cart_id = $data->id;
+            $cart = cart::find($cart_id);
+            $cart->delete();
+        }
+
+        return redirect()->back()->with('msg', 'Recebemos sua ordem, entraremos em contato em breve!');
+    }
+
+    public function card_order($totalPrice) {
+        return view('home.stripe', compact('totalPrice'));
+    }
+
+    public function stripePost(Request $request, $totalPrice) {
+        Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
+
+        Stripe\Charge::create ([
+                "amount" => $totalPrice * 100,
+                "currency" => "usd",
+                "source" => $request->stripeToken,
+                "description" => "Obrigado por comprar." 
+        ]);
+
+        $user = Auth::user();
+        $userID = $user->id;
+
+        $data = cart::where('user_id', '=', $userID)->get();
+
+        foreach($data as $data) {
+            $order = new order();
+
+            $order->name = $data->user_name;
+            $order->email = $data->user_email;
+            $order->phone = $data->user_phone;
+            $order->address = $data->user_address;
+            $order->user_id = $data->user_id;
+            
+            $order->product_title = $data->product_title;
+            $order->product_quantity = $data->product_quantity;
+            $order->product_price = $data->product_price;
+            $order->product_image = $data->product_image;
+            $order->product_id = $data->product_id;
+
+            $order->payment_status = 'pago';
+            $order->delivery_status = 'processando';
+            
+            $order->save();
+
+            $cart_id = $data->id;
+            $cart = cart::find($cart_id);
+            $cart->delete();
+        }
+
+        Session::flash('success', 'Pagamento bem sucedido!');
+
+        return back();
     }
 }
