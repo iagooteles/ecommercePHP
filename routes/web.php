@@ -40,4 +40,8 @@ route::post('/edit_product_confirm/{id}', [AdminController::class, 'edit_product
 
 route::get('/product_details/{id}', [HomeController::class, 'product_details']);
 
+route::get('/show_cart', [HomeController::class, 'show_cart']);
+
 route::post('/add_to_cart/{id}', [HomeController::class, 'add_to_cart']);
+
+route::get('/remove_cart/{id}', [HomeController::class, 'remove_cart']);

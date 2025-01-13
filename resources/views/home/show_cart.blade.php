@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.png" type="">
+    <title>Famms - Fashion HTML Template</title>
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="home/css/bootstrap.css" />
+    <!-- font awesome style -->
+    <link href="home/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="home/css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="home/css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+    @include('home.header')
+
+    <div class="d-flex justify-content-center align-items-center py-10">
+        <table class="table table-bordered w-50 mt-5">
+            <thead>
+                <tr>
+                    <th class="th-deg">Produto</th>
+                    <th class="th-deg">Quantidade</th>
+                    <th class="th-deg">Preço</th>
+                    <th class="th-deg">Imagem</th>
+                    <th class="th-deg">Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                    $totalPrice = 0; 
+                ?>
+                @foreach($cart as $cart)
+                    <tr>
+                        <td>{{ $cart->product_title }}</td>
+                        <td>{{ $cart->product_quantity }}</td>
+                        <td>${{ $cart->product_price }}</td>
+                        <td><img class="img-cart" src="/product/{{ $cart->product_image }}" alt="{{ $cart->product_title }}"></td>
+                        <td><a class="btn btn-danger" href="{{ url('remove_cart', $cart->id) }}" onclick="return confirm('Você quer mesmo remover {{ $cart->product_title }}}?')">Remover produto</a></td>
+                    </tr>
+
+                    <?php
+                        $totalPrice += $cart->product_price ; 
+                    ?>
+                @endforeach
+                
+            </tbody>
+        </table>
+
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <h2 class="total-price-cart">Total Price: ${{ $totalPrice }}</h2>
+    </div>
+
+
+    @include('home.footer')
+
+    <div class="cpy_">
+        <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
+
+            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
+
+        </p>
+    </div>
+    <!-- jQery -->
+    <script src="home/js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="home/js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="home/js/bootstrap.js"></script>
+    <!-- custom js -->
+    <script src="home/js/custom.js"></script>
+</body>
+
+</html>
