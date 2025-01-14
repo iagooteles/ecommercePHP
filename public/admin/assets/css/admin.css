@@ -124,3 +124,14 @@ label {
 #imageModal button:hover {
     color: black;
 }
+
+.modal-image {
+    width: 300px !important;
+    height: 400px !important;
+    margin: 0 auto;
+    border-radius: 0 !important;
+}
+
+.tr-container th {
+    font-size: 1.2rem;
+}
