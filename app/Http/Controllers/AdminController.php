@@ -104,4 +104,14 @@ class AdminController extends Controller
 
         return view('admin.order', compact('order'));
     }
+
+    public function confirm_delivery($id) {
+        $order = order::find($id);
+
+        $order->delivery_status = "OK";
+        $order->payment_status = "Finalizado";
+        $order->save();
+
+        return redirect()->back()->with('msg', 'Entrega confirmada com sucesso!');
+    }
 }

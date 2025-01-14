@@ -156,7 +156,7 @@ class HomeController extends Controller
             $order->product_image = $data->product_image;
             $order->product_id = $data->product_id;
 
-            $order->payment_status = 'pago';
+            $order->payment_status = 'Finalizado';
             $order->delivery_status = 'processando';
             
             $order->save();

@@ -23,6 +23,8 @@ route::get('/category', [AdminController::class, 'category']);
 
 route::get('/order', [AdminController::class, 'order']);
 
+route::get('/confirm_delivery/{id}', [AdminController::class, 'confirm_delivery']);
+
 route::post('/add_category', [AdminController::class, 'add_category']);
 
 route::get('/delete_category/{id}', [AdminController::class, 'delete_category']);
