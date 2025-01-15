@@ -5,10 +5,11 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Order;
+use App\Notifications\sendEmailNotification;
+use Illuminate\Support\Facades\Notification;
 
 class AdminController extends Controller
 {
-
     public function category() {
         $data = category::all();
 
@@ -114,4 +115,22 @@ class AdminController extends Controller
 
         return redirect()->back()->with('msg', 'Entrega confirmada com sucesso!');
     }
+
+    public function send_email($id) {
+        $order = order::find($id);
+
+        return view('admin.email_info', compact('order'));
+    }
+
+    public function send_user_email(Request $request, $id) {
+        $order = order::find($id);
+        $details = [
+            'mensagem'=> $request->mensagem,
+        ];
+
+        Notification::send($order, new sendEmailNotification($details));
+        
+        return redirect()->back()->with('msg', 'Email enviado com sucesso!');
+    }
+
 }

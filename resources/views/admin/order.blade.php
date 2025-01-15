@@ -37,6 +37,7 @@
                                     <th>Delivery</th>
                                     <th>Imagem</th>
                                     <th>Status</th>
+                                    <th>Enviar email</th>
                                 </tr>
                             </thead>
 
@@ -85,6 +86,9 @@
                                         @else
                                         <p class="delivery-confirm">Finalizado</p>
                                         @endif
+                                    </td>
+                                    <td>
+                                        <a href="{{ url('send_email', $order->id) }}" class="btn btn-info">Enviar email</a>
                                     </td>
                                 </tr>
                                 @endforeach

@@ -21,6 +21,10 @@ route::get('/order', [AdminController::class, 'order']);
 
 route::get('/confirm_delivery/{id}', [AdminController::class, 'confirm_delivery']);
 
+route::get('/send_email/{id}', [AdminController::class, 'send_email']);
+
+route::post('/send_user_email/{id}', [AdminController::class, 'send_user_email']);
+
 route::post('/add_category', [AdminController::class, 'add_category']);
 
 route::get('/delete_category/{id}', [AdminController::class, 'delete_category']);
