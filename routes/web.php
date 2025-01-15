@@ -7,17 +7,13 @@ use App\Http\Controllers\StripePaymentController;
 
 route::get('/', [HomeController::class, 'index']);
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
+Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
 });
 
-route::get('redirect', [HomeController::class, 'redirect']);
+route::get('redirect', [HomeController::class, 'redirect'])->middleware('auth', 'verified');
 
 route::get('/category', [AdminController::class, 'category']);
 
