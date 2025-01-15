@@ -22,6 +22,13 @@
                         <h2 class="h2-font">Ordens</h2>
                     </div>
 
+                    <div class="search-container">
+                        <form action="{{ url('search') }}" method="get">
+                            <input type="text" placeholder="buscar" name="search" class="search-input">
+                            <input type="submit" value="buscar" class="btn btn-outline-primary search-btn">
+                        </form>
+                    </div>
+
                     <div class="container-fluid mt-4">
                         <table class="table table-striped table-bordered table-hover" style="font-size: 1.3rem;">
                             <thead class="table-dark">
@@ -42,7 +49,7 @@
                             </thead>
 
                             <tbody>
-                                @foreach($order as $order)
+                                @forelse($order as $order)
                                 <tr>
                                     <td>{{ $order->name }}</td>
                                     <td>{{ $order->email }}</td>
@@ -91,7 +98,13 @@
                                         <a href="{{ url('send_email', $order->id) }}" class="btn btn-info">Enviar email</a>
                                     </td>
                                 </tr>
-                                @endforeach
+                                @empty
+
+                                <div class="no-result-found">
+                                    <p>Nenhum resultado encontrado.</p>
+                                </div>
+
+                                @endforelse
                             </tbody>
                         </table>
                     </div>

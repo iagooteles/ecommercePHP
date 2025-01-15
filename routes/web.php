@@ -19,6 +19,8 @@ route::get('/category', [AdminController::class, 'category']);
 
 route::get('/order', [AdminController::class, 'order']);
 
+route::get('/search', [AdminController::class, 'search_data']);
+
 route::get('/confirm_delivery/{id}', [AdminController::class, 'confirm_delivery']);
 
 route::get('/send_email/{id}', [AdminController::class, 'send_email']);
