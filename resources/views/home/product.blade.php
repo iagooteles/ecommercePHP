@@ -4,6 +4,24 @@
             <h2>
                 Nossos <span>produtos</span>
             </h2>
+
+            <div class="search-container mt-4 container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <form action="{{ url('product_search') }}" class="input-group">
+                            @csrf
+                            <input
+                                type="text"
+                                name="search"
+                                class="form-control"
+                                placeholder="Procure por um produto"
+                                aria-label="Search">
+                            <button type="submit" class="btn btn-danger ml-4">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="row">
             @foreach($products as $product)
@@ -64,4 +82,15 @@
             {!!$products->withQueryString()->links('pagination::bootstrap-5')!!}
         </div>
     </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var scrollpos = localStorage.getItem('scrollpos');
+            if (scrollpos) window.scrollTo(0, scrollpos);
+        });
+
+        window.onbeforeunload = function(e) {
+            localStorage.setItem('scrollpos', window.scrollY);
+        };
+    </script>
 </section>

@@ -19,8 +19,9 @@ class HomeController extends Controller
 {
     public function index() {
         $products = product::paginate(3); // aumentar paginação depois conforme necessidade 
+        $comments = comment::all();
 
-        return view('home.userpage', compact('products'));
+        return view('home.userpage', compact('products', 'comments'));
     }
 
     public function redirect() {
@@ -218,5 +219,17 @@ class HomeController extends Controller
         }
         
         return redirect('login');
+    }
+
+    public function product_search(Request $request) {
+        $comments = comment::all();
+        $searchText = $request->search;
+
+        $products = product::where('title', 'LIKE', "%$searchText%")
+        ->orWhere('category', 'LIKE', "%$searchText%")
+        ->orWhere('description', 'LIKE', "%$searchText%")
+        ->paginate(3); // Mudar conforme o necessário
+
+        return view('home.userpage', compact('products', 'comments'));
     }
 }
