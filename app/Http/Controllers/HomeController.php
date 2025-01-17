@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Product;
 use App\Models\Cart;
 use App\Models\Order;
+use App\Models\Comment;
 
 // stripe
 use Illuminate\Support\Facades\Session;
@@ -42,7 +43,9 @@ class HomeController extends Controller
             return view('admin.home', compact('total_products', 'total_orders', 'total_users', 'total_revenue', 'total_delivered', 'total_not_delivered'));
         } else {
             $products = product::paginate(3); // aumentar paginação depois conforme necessidade 
-            return view('home.userpage', compact('products'));
+            $comments = comment::all();
+
+            return view('home.userpage', compact('products', 'comments'));
         }
     }
 
@@ -201,5 +204,19 @@ class HomeController extends Controller
         Session::flash('success', 'Pagamento bem sucedido!');
 
         return back();
+    }
+
+    public function add_comment(Request $request) {
+        if (Auth::id()) {
+            $comment = new comment;
+            $comment->name = Auth::user()->name;
+            $comment->user_id = Auth::user()->id;
+            $comment->comment = $request->comment;
+            $comment->save();
+
+            return redirect()->back();
+        }
+        
+        return redirect('login');
     }
 }

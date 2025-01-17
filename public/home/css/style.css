@@ -1217,3 +1217,15 @@ form input[type="submit"]:focus {
 .order-container {
     min-height: 100vh;
 }
+
+.comments-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #f7444e;
+    font-weight: bold;
+    padding: 30px;
+}
+
+form textarea {
+    text-transform: none;
+}

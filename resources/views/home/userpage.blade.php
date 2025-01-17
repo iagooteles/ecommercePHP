@@ -34,6 +34,8 @@
 
     @include('home.new_arrival')
 
+    @include('home.comments_section')
+
     @include('home.product')
 
     @include('home.subscribe')
@@ -42,7 +44,7 @@
 
     @include('home.footer')
 
-    <!-- jQery -->
+    <!-- jQuery -->
     <script src="home/js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->
     <script src="home/js/popper.min.js"></script>
