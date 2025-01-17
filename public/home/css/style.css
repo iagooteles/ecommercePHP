@@ -1213,3 +1213,7 @@ form input[type="submit"]:focus {
     align-items: center;
     padding-top: 40px;
 }
+
+.order-container {
+    min-height: 100vh;
+}
