@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Order;
@@ -11,9 +12,13 @@ use Illuminate\Support\Facades\Notification;
 class AdminController extends Controller
 {
     public function category() {
-        $data = category::all();
+        if (Auth::id()) {
+            $data = category::all();
+    
+            return view('admin.category', compact('data'));
+        }
 
-        return view('admin.category', compact('data'));
+        return redirect('login');
     }
     
     public function add_category(Request $request) {
@@ -72,10 +77,14 @@ class AdminController extends Controller
     }
 
     public function edit_product($id) {
-        $product = product::find($id);
-        $category = category::all();
-
-        return view('admin.update_product', compact('product', 'category'));
+        if (Auth::id()) {
+            $product = product::find($id);
+            $category = category::all();
+    
+            return view('admin.update_product', compact('product', 'category'));
+        }
+        
+        return redirect('login');
     }
 
     public function edit_product_confirm(Request $request, $id) {

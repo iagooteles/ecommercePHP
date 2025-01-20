@@ -2,8 +2,6 @@
 
 ## Todo:
 
-Arumar layout detalhes de produtos;
-
 Ao adicionar um produto no carrinho, redirecionar pro carrinho;
 
 quando carrinho vazio, display msg 'carrinho vazio' e tirar opções de pagar.;

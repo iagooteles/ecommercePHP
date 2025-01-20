@@ -1248,3 +1248,7 @@ form textarea {
     background-color: #cc5200;
     color: #fff;
 }
+
+.form-control { 
+    font-size: 1.2rem !important;
+}
