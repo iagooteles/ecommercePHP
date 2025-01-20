@@ -74,7 +74,7 @@
                             </div>
 
                             <div class="label-container">
-                                <input class="btn btn-primary" value="Add Product" type="submit">
+                                <input class="btn btn-primary" value="Adicionar" type="submit">
                             </div>
 
                         </form>

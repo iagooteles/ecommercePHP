@@ -1,7 +1,6 @@
 ### Do readme Later ...
 
 ## Todo:
-Arrumar layout categorias/admin;
 
 Arrumar layout do card de produtos;
 

@@ -44,8 +44,15 @@
                             <td>{{ $product->description }}</td>
                             <td>{{ $product->quantity }}</td>
                             <td>{{ $product->category }}</td>
-                            <td>{{ $product->price }}</td>
-                            <td>{{ $product->discount_price }}%</td>
+                            <td>$ {{ $product->price }}</td>
+
+                            <td>
+                                @if(empty($product->discount_price) || $product->discount_price == 0)
+                                Sem Desconto
+                                @else
+                                $ {{ $product->discount_price }}
+                                @endif
+                            </td>
 
                             <td>
                                 <button
@@ -58,19 +65,17 @@
                             </td>
 
                             <td>
-                                <a 
-                                    href="{{ url('delete_product', $product->id) }}" 
+                                <a
+                                    href="{{ url('delete_product', $product->id) }}"
                                     class="btn btn-danger"
-                                    onclick="return confirm('Você quer mesmo deletar {{ $product->title }}')"
-                                >
+                                    onclick="return confirm('Você quer mesmo deletar {{ $product->title }}')">
                                     Deletar
                                 </a>
                             </td>
                             <td>
-                                <a 
-                                    href="{{ url('edit_product', $product->id) }}" 
-                                    class="btn btn-success"
-                                >
+                                <a
+                                    href="{{ url('edit_product', $product->id) }}"
+                                    class="btn btn-success">
                                     Editar
                                 </a>
                             </td>
@@ -80,12 +85,10 @@
                         <div
                             id="imageModal"
                             class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden"
-                            onclick="closeModal(event)"
-                        >
+                            onclick="closeModal(event)">
                             <div
                                 class="bg-white rounded-lg p-4 relative w-96 max-w-full"
-                                onclick="event.stopPropagation()"
-                            >
+                                onclick="event.stopPropagation()">
                                 <button
                                     type="button"
                                     class="absolute top-2 right-2 text-gray-500 hover:text-black text-2xl font-bold"
