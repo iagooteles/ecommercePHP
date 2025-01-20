@@ -7,21 +7,21 @@
             <div class="carousel-item active">
                 <div class="container ">
                     <div class="row">
-                        <div class="col-md-7 col-lg-6 ">
+                        <div class="col-md-7 col-lg-6">
                             <div class="detail-box">
                                 <h1>
                                     <span class="sale-text">
-                                        Sale 20% Off
+                                        20% Off
                                     </span>
                                     <br>
-                                    On Everything
+                                    <span style="font-size: 1.5rem;">Em TODOS os produtos</span>
                                 </h1>
                                 <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                    Aproveite a nossa promoção de início de ano! Até 30% de desconto em produtos selecionados. Não perca!
                                 </p>
-                                <div class="btn-box">
-                                    <a href="" class="btn1">
-                                        Shop Now
+                                <div class="btn-box mt-4">
+                                    <a href="" class="btn1" style="background-color: red; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+                                        Compre agora
                                     </a>
                                 </div>
                             </div>
@@ -35,18 +35,18 @@
                         <div class="col-md-7 col-lg-6 ">
                             <div class="detail-box">
                                 <h1>
-                                    <span>
-                                        Sale 20% Off
+                                    <span class="sale-text">
+                                        20% Off
                                     </span>
                                     <br>
-                                    On Everything
+                                    <span style="font-size: 2rem;">Em TODOS os produtos</span>
                                 </h1>
                                 <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                    Aproveite a nossa promoção de início de ano! Até 30% de desconto em produtos selecionados. Não perca!
                                 </p>
-                                <div class="btn-box">
-                                    <a href="" class="btn1">
-                                        Shop Now
+                                <div class="btn-box mt-4">
+                                    <a href="" class="btn1" style="background-color: red; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+                                        Compre agora
                                     </a>
                                 </div>
                             </div>
@@ -60,18 +60,18 @@
                         <div class="col-md-7 col-lg-6 ">
                             <div class="detail-box">
                                 <h1>
-                                    <span>
-                                        Sale 20% Off
+                                    <span class="sale-text">
+                                        20% Off
                                     </span>
                                     <br>
-                                    On Everything
+                                    <span style="font-size: 2rem;">Em TODOS os produtos</span>
                                 </h1>
                                 <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                    Aproveite a nossa promoção de início de ano! Até 30% de desconto em produtos selecionados. Não perca!
                                 </p>
-                                <div class="btn-box">
-                                    <a href="" class="btn1">
-                                        Shop Now
+                                <div class="btn-box mt-4">
+                                    <a href="" class="btn1" style="background-color: red; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+                                        Compre agora
                                     </a>
                                 </div>
                             </div>

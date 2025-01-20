@@ -66,7 +66,7 @@
     </div>
 
     <div class="d-flex justify-content-center align-items-center">
-        <h2 class="total-price-cart">Total Price: ${{ $totalPrice }}</h2>
+        <h2 class="total-price-cart">Preço total: ${{ $totalPrice }}</h2>
     </div>
 
     <div class="d-flex flex-column justify-content-center align-items-center py-4">
@@ -80,13 +80,6 @@
 
     @include('home.footer')
 
-    <div class="cpy_">
-        <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
-
-            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-
-        </p>
-    </div>
     <!-- jQery -->
     <script src="home/js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->
