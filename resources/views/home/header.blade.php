@@ -18,7 +18,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="product.html">Produtos</a>
+                        <a class="nav-link" href="{{ url('/all_products') }}">Produtos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="blog_list.html">Blog</a>

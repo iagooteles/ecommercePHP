@@ -89,7 +89,13 @@ class HomeController extends Controller
     public function add_to_cart(Request $request, $id) {
         if (Auth::id()) {
             $user = Auth::user();
+            $userId = $user->id;
             $product = product::find($id);
+
+            $product_exists_id = cart::where('product_id', '=', $id)
+            ->where('user_id', '=', $userId)
+            ->get('id')
+            ->first();
             
             $cart = new cart;
             $cart->user_name = $user->name;
@@ -98,12 +104,20 @@ class HomeController extends Controller
             $cart->user_address = $user->address;
             $cart->user_id = $user->id;
             $cart->product_title = $product->title;
-            $cart->product_quantity = $request->quantity;
+            
+            if ($product_exists_id) {
+                $cart = cart::find($product_exists_id)->first();
+                $quantity = $cart->product_quantity;
+
+                $cart->product_quantity = $quantity + $request->quantity;
+            } else {
+                $cart->product_quantity = $request->quantity;
+            }
 
             if ($product->discount_price ) {
-                $cart->product_price = $product->discount_price * $request->quantity;
+                $cart->product_price = $product->discount_price * $cart->product_quantity;
             } else {
-                $cart->product_price = $product->price * $request->quantity;
+                $cart->product_price = $product->price * $cart->product_quantity;
             }
 
             $cart->product_image = $product->image;
@@ -231,5 +245,22 @@ class HomeController extends Controller
         ->paginate(3); // Mudar conforme o necessário
 
         return view('home.userpage', compact('products', 'comments'));
+    }
+
+    public function search_product_view(Request $request) {
+        $searchText = $request->search;
+
+        $products = product::where('title', 'LIKE', "%$searchText%")
+        ->orWhere('category', 'LIKE', "%$searchText%")
+        ->orWhere('description', 'LIKE', "%$searchText%")
+        ->paginate(3); // Mudar conforme o necessário
+
+        return view('home.all_products', compact('products'));
+    }
+
+    public function all_products() {
+        $products = product::paginate(9); // aumentar paginação depois conforme necessidade 
+
+        return view('home.all_products', compact('products'));
     }
 }

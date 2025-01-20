@@ -276,42 +276,6 @@ a:focus {
     position: unset;
 }
 
-.slider_section .detail-box h1 {
-    font-size: 4.5rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #002c3e;
-    line-height: 70px;
-}
-
-.slider_section .detail-box h1 span {
-    color: #f7444e;
-}
-
-.slider_section .detail-box p {
-    font-size: 16px;
-    margin-top: 20px;
-    margin-bottom: 1.5rem;
-}
-
-.slider_section .detail-box a {
-    display: inline-block;
-    padding: 12px 45px;
-    background-color: #f7444e;
-    border: 1px solid #f7444e;
-    color: #ffffff;
-    border-radius: 0;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    margin-top: 10px;
-    font-weight: 700;
-}
-
-.slider_section .detail-box a:hover {
-    background-color: transparent;
-    color: #f7444e;
-}
-
 .slider_section .img-box img {
     width: 100%;
 }
@@ -1228,4 +1192,64 @@ form input[type="submit"]:focus {
 
 form textarea {
     text-transform: none;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.img-box {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.price-box h6 {
+    margin: 5px 0;
+}
+
+.option_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.options .option1 {
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.options input[type="number"] {
+    width: 100%;
+    max-width: 150px;
+}
+
+.options input[type="submit"] {
+    width: 100%;
+    max-width: 250px; 
+}
+
+.box:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }

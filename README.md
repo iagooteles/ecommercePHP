@@ -2,8 +2,6 @@
 
 ## Todo:
 
-Arrumar layout do card de produtos;
-
 Arumar layout detalhes de produtos;
 
 Ao adicionar um produto no carrinho, redirecionar pro carrinho;
