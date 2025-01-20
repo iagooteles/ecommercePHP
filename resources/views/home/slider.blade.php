@@ -10,7 +10,7 @@
                         <div class="col-md-7 col-lg-6 ">
                             <div class="detail-box">
                                 <h1>
-                                    <span>
+                                    <span class="sale-text">
                                         Sale 20% Off
                                     </span>
                                     <br>

@@ -125,7 +125,7 @@ class HomeController extends Controller
 
             $cart->save();
 
-            return redirect()->back();
+            return redirect()->back()->with('msg', 'Produto adicionado ao carrinho com sucesso!');
         }
 
         return redirect('login');

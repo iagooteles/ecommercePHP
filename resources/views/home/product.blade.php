@@ -1,5 +1,13 @@
 <section class="product_section layout_padding">
     <div class="container">
+
+        @if(session()->has('msg'))
+        <div class="alert alert-success">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+            {{ session()->get('msg') }}
+        </div>
+        @endif
+
         <div class="heading_container heading_center">
             <h2>
                 Nossos <span>produtos</span>
@@ -54,6 +62,7 @@
                             @endif
                         </div>
                     </div>
+                    
                     <div class="option_container">
                         <div class="options">
                             <a href="{{ url('product_details', $product->id) }}" class="option1">

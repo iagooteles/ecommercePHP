@@ -360,27 +360,6 @@ a:focus {
     transition: all 0.3s;
 }
 
-.product_section .box .detail-box {
-    text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-
-.product_section .box .detail-box h5 {
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-.product_section .box .detail-box h6 {
-    margin-top: 10px;
-    color: #002c3e;
-    font-weight: 600;
-}
-
 .product_section .box:hover img {
     -webkit-transform: scale(1.1);
     transform: scale(1.1);
@@ -712,20 +691,6 @@ a:focus {
 
 .client_section .box .img_container .img-box .img_box-inner img {
     width: 100%;
-}
-
-.client_section .box .detail-box {
-    margin-top: 25px;
-}
-
-.client_section .box .detail-box h5 {
-    font-size: 20px;
-    font-weight: 600;
-}
-
-.client_section .box .detail-box h6 {
-    font-size: 15px;
-    color: #999998;
 }
 
 .client_section .carousel-control-prev,
@@ -1141,7 +1106,7 @@ form input[type="submit"]:focus {
 .product-container {
     margin: auto;
     width: 50%;
-    padding: 30px;
+    padding: 70px 0;
 }
 
 .img-container img {
@@ -1217,6 +1182,13 @@ form textarea {
     margin-bottom: 20px;
 }
 
+.price-box {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
 .price-box h6 {
     margin: 5px 0;
 }
@@ -1252,4 +1224,27 @@ form textarea {
 
 .box:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.sale-text {
+    font-size: 2rem;
+    color: red;
+    font-weight: bold;
+}
+
+.btn1 {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.btn1:hover {
+    background-color: #cc5200;
+    color: #fff;
 }
