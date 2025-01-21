@@ -24,6 +24,8 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
+    
     <div class="hero_area">
         @include('home.header')
 

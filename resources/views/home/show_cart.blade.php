@@ -20,9 +20,13 @@
     <link href="{{ asset('home/css/style.css') }}" rel="stylesheet" />
     <!-- responsive style -->
     <link href="{{ asset('home/css/responsive.css') }}" rel="stylesheet" />
+    <!-- sweet alert  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+    @include('sweetalert::alert')
+
     @include('home.header')
 
     @if(session()->has('msg'))
@@ -54,7 +58,7 @@
                     <td>{{ $cart->product_quantity }}</td>
                     <td>${{ $cart->product_price }}</td>
                     <td><img class="img-cart" src="/product/{{ $cart->product_image }}" alt="{{ $cart->product_title }}"></td>
-                    <td><a class="btn btn-danger" href="{{ url('remove_cart', $cart->id) }}" onclick="return confirm('Você quer mesmo remover {{ $cart->product_title }}}?')">Remover produto</a></td>
+                    <td><a class="btn btn-danger" href="{{ url('remove_cart', $cart->id) }}" onclick="confirmation(event)">Remover produto</a></td>
                 </tr>
 
                 <?php
@@ -78,7 +82,7 @@
     </div>
     @else
     <div class="container-fluid d-flex align-items-center justify-content-center vh-100">
-            <h3 class="mb-10" style="font-size: 1.6rem;">Seu carrinho está vazio, vamos às compras!</h3>
+        <h3 class="mb-10" style="font-size: 1.6rem;">Seu carrinho está vazio, vamos às compras!</h3>
     </div>
     @endif
 
@@ -93,6 +97,27 @@
     <script src="home/js/bootstrap.js"></script>
     <!-- custom js -->
     <script src="home/js/custom.js"></script>
+
+    <script>
+        function confirmation(ev) {
+            ev.preventDefault();
+            var urlToRedirect = ev.currentTarget.getAttribute('href');
+            console.log(urlToRedirect);
+
+            swal({
+                    title: "Tem certeza de que deseja cancelar este produto?",
+                    text: "Você poderá adicionar o produto novamente depois.",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willCancel) => {
+                    if (willCancel) {
+                        window.location.href = urlToRedirect;
+                    }
+                });
+        }
+    </script>
 </body>
 
 </html>

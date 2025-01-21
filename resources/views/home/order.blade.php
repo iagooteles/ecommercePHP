@@ -21,9 +21,13 @@
     <link href="{{ asset('home/css/style.css') }}" rel="stylesheet" />
     <!-- responsive style -->
     <link href="{{ asset('home/css/responsive.css') }}" rel="stylesheet" />
+    <!-- sweet alert  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
+    @include('sweetalert::alert')
+
     @include('home.header')
 
     <div class="order-container container mt-4">
@@ -83,7 +87,7 @@
                         <a 
                             class="btn btn-danger" 
                             href="{{ url('cancel_order', $order->id) }}"
-                            onclick="return confirm('Você quer mesmo cancelar o pedido: {{ $order->product_title }}?')"
+                            onclick="confirmation(event)"
                         >Cancelar Pedido</a>
                         @else
                         <p>Pedido Finalizado</p>
@@ -107,6 +111,28 @@
     <script src="home/js/bootstrap.js"></script>
     <!-- custom js -->
     <script src="home/js/custom.js"></script>
+
+    <script>
+        function confirmation(ev) {
+            ev.preventDefault();
+            var urlToRedirect = ev.currentTarget.getAttribute('href');
+            console.log(urlToRedirect);
+
+            swal({
+                    title: "Tem certeza de que deseja cancelar este produto?",
+                    text: "Você poderá adicionar o produto novamente depois.",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willCancel) => {
+                    if (willCancel) {
+                        window.location.href = urlToRedirect;
+                    }
+                });
+        }
+    </script>
+
 </body>
 
 </html>

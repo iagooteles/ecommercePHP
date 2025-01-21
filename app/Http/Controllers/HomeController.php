@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\User;
 use App\Models\Product;
 use App\Models\Cart;
@@ -125,7 +126,7 @@ class HomeController extends Controller
 
             $cart->save();
 
-            return redirect('show_cart')->with('msg', 'Produto adicionado ao carrinho com sucesso!');
+            return redirect('show_cart');
         }
 
         return redirect('login');
