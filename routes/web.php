@@ -68,3 +68,5 @@ route::get('/product_search', [HomeController::class, 'product_search']);
 route::get('/search_product_view', [HomeController::class, 'search_product_view']);
 
 route::get('/all_products', [HomeController::class, 'all_products']);
+
+route::get('/comments', [HomeController::class, 'comments']);

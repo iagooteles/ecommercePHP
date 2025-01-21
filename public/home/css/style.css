@@ -1252,3 +1252,14 @@ form textarea {
 .form-control { 
     font-size: 1.2rem !important;
 }
+
+.comments-container h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: red;
+}
+
+.comments-container p {
+    font-size: 1.2rem;
+}
+

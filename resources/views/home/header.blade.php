@@ -14,7 +14,7 @@
                         <a class="nav-link" href="{{ url('/all_products') }}">Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blog_list.html">Comentários*</a>
+                        <a class="nav-link" href="{{ url('/comments') }}">Comentários</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('show_cart') }}">Carrinho</a>

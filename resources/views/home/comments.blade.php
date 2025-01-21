@@ -25,18 +25,16 @@
 
 <body>
     @include('sweetalert::alert')
-    
-    <div class="hero_area">
-        @include('home.header')
 
-        @include('home.slider')
+    
+    @include('home.header')
+
+    <div class="container flex-col text-center comments-container">
+        <h1 class="m-2 comments-title">Comentários</h1>
+        <p>Deixe o seu comentário!</p>
     </div>
-    
-    @include('home.why')
 
-    @include('home.new_arrival')
-
-    @include('home.product')
+    @include('home.comments_section')
 
     @include('home.subscribe')
 

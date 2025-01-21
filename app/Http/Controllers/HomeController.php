@@ -20,9 +20,8 @@ class HomeController extends Controller
 {
     public function index() {
         $products = product::paginate(3); // aumentar paginação depois conforme necessidade 
-        $comments = comment::all();
 
-        return view('home.userpage', compact('products', 'comments'));
+        return view('home.userpage', compact('products'));
     }
 
     public function redirect() {
@@ -45,9 +44,8 @@ class HomeController extends Controller
             return view('admin.home', compact('total_products', 'total_orders', 'total_users', 'total_revenue', 'total_delivered', 'total_not_delivered'));
         } else {
             $products = product::paginate(3); // aumentar paginação depois conforme necessidade 
-            $comments = comment::all();
 
-            return view('home.userpage', compact('products', 'comments'));
+            return view('home.userpage', compact('products'));
         }
     }
 
@@ -263,5 +261,11 @@ class HomeController extends Controller
         $products = product::paginate(9); // aumentar paginação depois conforme necessidade 
 
         return view('home.all_products', compact('products'));
+    }
+
+    public function comments() {
+        $comments = comment::paginate(4);
+
+        return view('home.comments', compact('comments'));
     }
 }
