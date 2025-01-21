@@ -32,6 +32,7 @@
     </div>
     @endif
 
+    @if(count($cart) > 0)
     <div class="d-flex justify-content-center align-items-center py-10">
         <table class="table table-bordered w-50 mt-5">
             <thead>
@@ -62,7 +63,6 @@
                 @endforeach
             </tbody>
         </table>
-
     </div>
 
     <div class="d-flex justify-content-center align-items-center">
@@ -76,6 +76,11 @@
             <a class="btn btn-danger" href="{{ url('card_order', $totalPrice) }}">Pagar com cartão</a>
         </div>
     </div>
+    @else
+    <div class="container-fluid d-flex align-items-center justify-content-center vh-100">
+            <h3 class="mb-10" style="font-size: 1.6rem;">Seu carrinho está vazio, vamos às compras!</h3>
+    </div>
+    @endif
 
 
     @include('home.footer')

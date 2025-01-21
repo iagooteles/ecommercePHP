@@ -2,8 +2,6 @@
 
 ## Todo:
 
-quando carrinho vazio, display msg 'carrinho vazio' e tirar opções de pagar.;
-
 Arrumar dashboard admin (view da home);
 
 Criar uma sessão só de comentários, ou seja, tirar da homepage!
