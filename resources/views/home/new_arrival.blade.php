@@ -1,23 +1,16 @@
-<section class="arrival_section">
-    <div class="container">
-        <div class="box">
-            <div class="arrival_bg_box">
-                <img src="images/arrival-bg.png" alt="">
+<section class="new-arrivals-section">
+    <div class="new-arrivals-container">
+        <div class="new-arrivals-box">
+            <div class="new-arrivals-bg">
+                <img src="images/arrival-bg.png" alt="Promoção Especial">
             </div>
-            <div class="row">
-                <div class="col-md-6 ml-auto">
-                    <div class="heading_container remove_line_bt">
-                        <h2>
-                            #NewArrivals
-                        </h2>
-                    </div>
-                    <p style="margin-top: 20px;margin-bottom: 30px;">
-                        Vitae fugiat laboriosam officia perferendis provident aliquid voluptatibus dolorem, fugit ullam sit earum id eaque nisi hic? Tenetur commodi, nisi rem vel, ea eaque ab ipsa, autem similique ex unde!
-                    </p>
-                    <a href="">
-                        Shop Now
-                    </a>
-                </div>
+            <div class="new-arrivals-content">
+                <h2 class="new-arrivals-title">#NovidadesChegando</h2>
+                <p class="new-arrivals-text">
+                    Aproveite nossa promoção exclusiva! Descontos de até <strong>50% OFF</strong> em toda a loja.  
+                    Não perca essa chance de renovar seu estilo com preços imperdíveis!
+                </p>
+                <a href="#" class="new-arrivals-btn">Aproveitar Oferta</a>
             </div>
         </div>
     </div>

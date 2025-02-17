@@ -7,13 +7,9 @@
 
 <body>
     <div class="container-scroller">
-
         @include('admin/sidebar')
-
         <div class="container-fluid page-body-wrapper">
-
             @include('admin/header')
-
             <div class="main-panel">
                 <div class="content-wrapper">
 
@@ -66,7 +62,7 @@
                                 </select>
                             </div>
 
-                            <div class="label-container">
+                            <div class="img-label-container">
                                 <label class="img-label" for="">Imagem: </label>
                                 <input id="image-upload" class="choose-image-input" type="file" name="image" required onchange="updateFileName(this)">
                                 <p></p>

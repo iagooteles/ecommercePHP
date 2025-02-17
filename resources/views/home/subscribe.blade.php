@@ -7,9 +7,9 @@
                         <div class="heading_container heading_center">
                             <h3>Se inscreva para receber ofertas de descontos</h3>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                        <p>Se inscreva para ficar por dentro de nossas ofertas exclusivas</p>
                         <form action="">
-                            <input type="email" placeholder="Enter your email">
+                            <input type="email" placeholder="email">
                             <button>
                                 subscribe
                             </button>

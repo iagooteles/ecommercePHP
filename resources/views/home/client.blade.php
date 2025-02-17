@@ -2,7 +2,7 @@
     <div class="container">
         <div class="heading_container heading_center">
             <h2>
-                Customer's Testimonial
+                Depoimentos de Clientes
             </h2>
         </div>
         <div id="carouselExample3Controls" class="carousel slide" data-ride="carousel">
@@ -12,19 +12,19 @@
                         <div class="img_container">
                             <div class="img-box">
                                 <div class="img_box-inner">
-                                    <img src="images/client.jpg" alt="">
+                                    <img src="images/client.jpg" alt="Cliente satisfeita">
                                 </div>
                             </div>
                         </div>
                         <div class="detail-box">
                             <h5>
-                                Anna Trevor
+                                Mariana Souza
                             </h5>
                             <h6>
-                                Customer
+                                Cliente
                             </h6>
                             <p>
-                                Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                                "Fiquei impressionada com a qualidade e o atendimento! A entrega foi super rápida e os produtos são incríveis. Com certeza voltarei a comprar!"
                             </p>
                         </div>
                     </div>
@@ -34,19 +34,19 @@
                         <div class="img_container">
                             <div class="img-box">
                                 <div class="img_box-inner">
-                                    <img src="images/client.jpg" alt="">
+                                    <img src="images/client.jpg" alt="Cliente satisfeita">
                                 </div>
                             </div>
                         </div>
                         <div class="detail-box">
                             <h5>
-                                Anna Trevor
+                                Juliana Mendes
                             </h5>
                             <h6>
-                                Customer
+                            Cliente
                             </h6>
                             <p>
-                                Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                                "Adorei minha experiência de compra! Os preços são justos e a qualidade dos produtos é excelente. Recomendo a todos!"
                             </p>
                         </div>
                     </div>
@@ -56,19 +56,19 @@
                         <div class="img_container">
                             <div class="img-box">
                                 <div class="img_box-inner">
-                                    <img src="images/client.jpg" alt="">
+                                    <img src="images/client.jpg" alt="Cliente satisfeita">
                                 </div>
                             </div>
                         </div>
                         <div class="detail-box">
                             <h5>
-                                Anna Trevor
+                                Camila Ferreira
                             </h5>
                             <h6>
-                                Customer
+                                Cliente
                             </h6>
                             <p>
-                                Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
+                                "Ótima experiência! Desde o atendimento até a entrega, tudo foi perfeito. Já indiquei para minhas amigas e com certeza comprarei novamente."
                             </p>
                         </div>
                     </div>
@@ -77,11 +77,11 @@
             <div class="carousel_btn_box">
                 <a class="carousel-control-prev" href="#carouselExample3Controls" role="button" data-slide="prev">
                     <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
-                    <span class="sr-only">Previous</span>
+                    <span class="sr-only">Anterior</span>
                 </a>
                 <a class="carousel-control-next" href="#carouselExample3Controls" role="button" data-slide="next">
                     <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                    <span class="sr-only">Next</span>
+                    <span class="sr-only">Próximo</span>
                 </a>
             </div>
         </div>
