@@ -1111,9 +1111,6 @@ form input[type="submit"]:focus {
 }
 
 .img-container img {
-    height: 400px;
-    width: 400px;
-    object-fit: fill;
     padding: 20px;
 }
 

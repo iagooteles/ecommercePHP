@@ -36,12 +36,12 @@
 
     <div class="row align-items-center product-container">
 
-
-        <div class="col-md-6 img-container">
+        <div class="col-12 col-md-6 img-container">
             <img src="/product/{{ $product->image }}" alt="" class="img-fluid rounded shadow">
         </div>
+
         <div class="col-md-6 detail-box">
-            <h2 class="fw-bold text-black" style="font-size: 1.4rem;">{{ $product->title }}</h2>
+            <h2 class="font-weight-bold text-capitalize text-black" style="font-size: 2rem;">{{ $product->title }}</h2>
             @if($product->discount_price != null)
             <h5 class="text-danger mt-3" style="text-decoration: line-through; font-size: 0.9rem;">
                 Preço: ${{ $product->price }}
@@ -69,9 +69,9 @@
 
             <form action="{{ url('add_to_cart', $product->id) }}" method="POST" class="mt-4">
                 @csrf
-                <div class="d-flex align-items-center mb-3">
+                <div class="align-items-center mb-3">
                     <label for="quantity" class="me-2 fw-bold">Quantidade:</label>
-                    <input type="number" id="quantity" name="quantity" value="1" min="1" class="form-control w-25">
+                    <input type="number" id="quantity" name="quantity" value="1" min="1" class="form-control w-25 m-auto">
                 </div>
                 <button type="submit" class="btn btn-primary px-4 py-2">
                     Adicionar ao carrinho

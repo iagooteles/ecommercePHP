@@ -65,6 +65,10 @@
                     {{ __('Registrar') }}
                 </x-button>
             </div>
+            
+            <a href="{{ url('/') }}" class="return-home-btn">
+                {{ __('Voltar para a Home') }}
+            </a>
         </form>
     </x-authentication-card>
 </x-guest-layout>
@@ -130,5 +134,17 @@
 
     .register-btn:hover {
         background-color: #0056b3;
+    }
+
+    .return-home-btn {
+        color: #007bff;
+        font-size: 16px;
+        text-decoration: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .return-home-btn:hover {
+        text-decoration: underline;
     }
 </style>
