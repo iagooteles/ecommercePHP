@@ -26,12 +26,12 @@
                     <div class="d-flex justify-content-center mb-4">
                         <form action="{{ url('/add_category') }}" method="POST">
                             @csrf
-                            <input type="text" class="input-color" name="categoryName" placeholder="Categoria">
+                            <input type="text" class="input-color py-2" name="categoryName" placeholder="Categoria">
                             <input type="submit" class="btn btn-outline-primary search-btn" name="submit" value="Adicionar">
                         </form>
                     </div>
 
-                    <div class="container w-50">
+                    <div class="container col-12 col-md-6">
                         <table class="table table-bordered table-hover text-center" style="font-size: 1.2rem;">
                             <thead class="table-dark">
                                 <tr>

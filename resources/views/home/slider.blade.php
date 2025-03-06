@@ -20,7 +20,7 @@
                                     Aproveite nossa liquidação de verão! Descontos incríveis em Calças, Camisas e muito mais. Corra para garantir o seu!
                                 </p>
                                 <div class="btn-box mt-4">
-                                    <a href="" class="btn1" style="background-color: red; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+                                    <a href="{{ url('/all_products') }}" class="btn1" style="background-color: red; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
                                         Compre agora
                                     </a>
                                 </div>
@@ -45,7 +45,7 @@
                                     Garanta a moda que você sempre quis com nossa promoção exclusiva. Na compra de um acessório, leve o segundo totalmente grátis!
                                 </p>
                                 <div class="btn-box mt-4">
-                                    <a href="" class="btn1" style="background-color: red; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+                                    <a href="{{ url('/all_products') }}" class="btn1" style="background-color: red; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
                                         Aproveite agora
                                     </a>
                                 </div>
@@ -70,7 +70,7 @@
                                     Está comprando pela primeira vez? Nós te damos 15% de desconto na sua primeira compra! Não perca essa oportunidade!
                                 </p>
                                 <div class="btn-box mt-4">
-                                    <a href="" class="btn1" style="background-color: red; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
+                                    <a href="{{ url('/all_products') }}" class="btn1" style="background-color: red; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold;">
                                         Compre agora
                                     </a>
                                 </div>

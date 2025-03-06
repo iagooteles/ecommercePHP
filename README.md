@@ -1,9 +1,6 @@
 ### Do readme Later ...
 
-new arrivels quebrado em mobile;
-admins estão sendo contados como clientes, contar apenas clientes e não admins;
-
-DEPOIS DE TERMINAR O PROJETO DE VEZ, DESINSTALAR E INSTALAR NOVAMENTE FAZENDO O BUILDME CONFORME...
+DEPOIS DE TERMINAR O PROJETO DE VEZ, DESINSTALAR E INSTALAR NOVAMENTE FAZENDO O README CONFORME...
 
 ## Todo:
 
@@ -24,16 +21,21 @@ npm install
 3. Configuração do .env: Certifique-se de que o arquivo .env está configurado corretamente, com as variáveis necessárias (como DB_CONNECTION, APP_KEY, etc).
 
 
-4. Configuração do banco de dados: Se você estiver usando o banco de dados, certifique-se de ter configurado corretamente as credenciais no arquivo .env. Após isso, execute as migrações:
+4. Certifique-se de estar utilizando XAMPP, se for o caso, com Apache e MySQL ligados;
+
+5. Configuração do banco de dados: Se você estiver usando o banco de dados, certifique-se de ter configurado corretamente as credenciais no arquivo .env. Após isso, execute as migrações:
 
 ```bash
 php artisan migrate
 ```
 
+6. Execute o comando para executar o servidor com Laravel
 
+```bash
+php artisan serve
+```
 
-
-
+7. O servidor estará executando na porta 8000
 
 ## Configuração de Teste de Pagamento
 

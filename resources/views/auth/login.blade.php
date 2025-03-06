@@ -21,21 +21,21 @@
             </div>
 
             <div class="input-group">
-                <x-label for="password" value="{{ __('Password') }}" />
+                <x-label for="password" value="{{ __('Senha') }}" />
                 <x-input id="password" type="password" name="password" required autocomplete="current-password" />
             </div>
 
             <div class="remember-me">
                 <label for="remember_me" class="flex items-center">
                     <x-checkbox id="remember_me" name="remember" />
-                    <span class="text-sm text-gray-600">{{ __('Remember me') }}</span>
+                    <span class="text-sm text-gray-600">{{ __('Lembrar-se de mim') }}</span>
                 </label>
             </div>
 
             <div class="form-actions">
                 @if (Route::has('password.request'))
                     <a href="{{ route('password.request') }}" class="forgot-password">
-                        {{ __('Forgot your password?') }}
+                        {{ __('Recuperar senha') }}
                     </a>
                 @endif
 
@@ -69,7 +69,7 @@
     }
 
     .input-group input {
-        width: 100%;
+        width: 95%;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 4px;

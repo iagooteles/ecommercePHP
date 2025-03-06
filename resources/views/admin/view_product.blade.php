@@ -57,8 +57,8 @@
                             <td>
                                 <button
                                     type="button"
-                                    class="text-white px-4 py-2 rounded"
-                                    style="text-decoration: underline;"
+                                    class="text-white px-4 py-2 bg-transparent"
+                                    style="text-decoration: underline; border: none;"
                                     onclick="openModal('{{ $product->title }}', '/product/{{ $product->image }}')">
                                     Ver Imagem
                                 </button>
@@ -82,28 +82,31 @@
                         </tr>
                         @endforeach
 
-                        <div
-                            id="imageModal"
-                            class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden"
-                            onclick="closeModal(event)">
-                            <div
-                                class="bg-white rounded-lg p-4 relative w-96 max-w-full"
-                                onclick="event.stopPropagation()">
-                                <button
-                                    type="button"
-                                    class="absolute top-2 right-2 text-gray-500 hover:text-black text-2xl font-bold"
-                                    onclick="closeModal()">
-                                    &times;
-                                </button>
-                                <h2 id="modalTitle" class="text-xl font-bold mb-4"></h2>
-                                <img
-                                    id="modalImage"
-                                    src=""
-                                    alt="Imagem do produto"
-                                    class="w-full max-w-xs h-auto max-h-70 rounded mx-auto">
-                            </div>
-                        </div>
                     </table>
+                    <div id="imageModal"
+                        class="fixed inset-0 flex justify-center items-center"
+                        style="display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; z-index: 9999; justify-content: center; align-items: center; 
+                        background-color: rgba(128, 128, 128, 0.7)"
+                        onclick="closeModal(event)">
+                        <div class="rounded-lg p-4 relative w-96 max-w-full shadow-lg"
+                            onclick="event.stopPropagation()"
+                            style="background-color: #000 !important"
+                            >
+                            <button type="button"
+                                class="absolute top-2 right-2 text-gray-500 hover:text-black"
+                                onclick="closeModal()">
+                                &times;
+                            </button>
+                                              
+                            <br><br>
+
+                            <img id="modalImage"
+                                src=""
+                                alt="Imagem do produto"
+                                class="w-full h-auto max-h-[80vh] rounded mx-auto">
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -114,14 +117,13 @@
 
 <script>
     function openModal(title, imageUrl) {
-        document.getElementById('modalTitle').textContent = title;
         document.getElementById('modalImage').src = imageUrl;
-        document.getElementById('imageModal').classList.remove('hidden');
+        document.getElementById('imageModal').style.display = 'flex';
     }
 
     function closeModal(event = null) {
         if (!event || event.target.id === 'imageModal') {
-            document.getElementById('imageModal').classList.add('hidden');
+            document.getElementById('imageModal').style.display = 'none';
         }
     }
 </script>
