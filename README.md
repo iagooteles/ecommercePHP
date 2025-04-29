@@ -65,10 +65,10 @@ APP_KEY, STRIPE_KEY, STRIPE_SECRET
 
 ⚠️ Copie o .env.example para .env e edite conforme necessário.
 
-////
-Gerar chave da aplicação:
+4.1 Gerar chave da aplicação:
 php artisan key:generate
-////
+
+4.2 - Criar o banco 'ecommercephp' em localhost/phpmyadmin/
 
 5. Configurar o banco de dados: Certifique-se de estar com o XAMPP (Apache e MySQL) rodando.
 
