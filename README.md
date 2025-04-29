@@ -1,71 +1,89 @@
-### Do readme Later ...
+### Ecommerce PHP
 
-DEPOIS DE TERMINAR O PROJETO DE VEZ, DESINSTALAR E INSTALAR NOVAMENTE FAZENDO O README CONFORME...
+Este é um projeto de ecommerce desenvolvido com PHP (utilizando Laravel), com funcionalidades completas para usuários e administradores. A aplicação é responsiva, inclui sistema de pagamentos com Stripe, gerenciamento de produtos, categorias, pedidos e mais.
 
-## Todo:
+---
 
-Arrumar dashboard admin (view da home);
+## 🚀 Funcionalidades
 
-1. Instalar dependências do Composer: Primeiro, instale as dependências do backend (PHP) usando o Composer:
+### 👤 Usuário
+- Registro e login de usuários
+- Adição de produtos ao carrinho
+- Sistema de comentários nos produtos
+- Finalização de compras usando **cartão de teste Stripe**
+- Redirecionamento automático após login
+  - Usuário comum: redirecionado à loja
+  - Admin: redirecionado ao **painel administrativo**
+- Verificação de email (⚠️ *desabilitada por padrão*)
+
+### 🛠️ Administrador
+- Dashboard com visão geral
+- CRUD de **produtos** e **categorias**
+- Visualização e gerenciamento de **ordens**
+- Envio de **email para usuários**
+- Acesso completo às informações de pedidos realizados
+
+---
+
+Para testar pagamentos com **Stripe**:
+
+- **Número do Cartão**: `4242 4242 4242 4242`
+- **CVC**: `123`
+- **Validade**: qualquer data futura
+
+📌 Estes dados funcionam apenas em **ambiente de desenvolvimento** e **não realizam cobranças reais**.
+
+- Esses dados são exclusivos para o **modo de teste** da Stripe e não devem ser usados em um ambiente de produção.
+- Você pode testar diferentes cenários de falha com outros números de cartões de teste fornecidos pela [documentação oficial da Stripe](https://stripe.com/docs/testing).
+
+Configuração no `.env`:
+```env
+STRIPE_KEY=your_test_publishable_key
+STRIPE_SECRET=your_test_secret_key
+```
+
+### Instalação
+
+
+1. Clone o repositório e acesse a pasta do projeto.
+
+2. Instalar dependências do backend (PHP):
 
 ```bash
 composer install
 ```
 
-2. Instalar dependências do Node.js: Para o frontend, instale as dependências do Node.js (caso esteja usando Laravel Mix):
+3. Instalar dependências do frontend:
 
 ```bash
 npm install
 ```
 
-3. Configuração do .env: Certifique-se de que o arquivo .env está configurado corretamente, com as variáveis necessárias (como DB_CONNECTION, APP_KEY, etc).
+4. Configurar o .env com variáveis como:
+DB_CONNECTION, DB_HOST, DB_USERNAME, DB_PASSWORD
+APP_KEY, STRIPE_KEY, STRIPE_SECRET
 
+⚠️ Copie o .env.example para .env e edite conforme necessário.
 
-4. Certifique-se de estar utilizando XAMPP, se for o caso, com Apache e MySQL ligados;
+////
+Gerar chave da aplicação:
+php artisan key:generate
+////
 
-5. Configuração do banco de dados: Se você estiver usando o banco de dados, certifique-se de ter configurado corretamente as credenciais no arquivo .env. Após isso, execute as migrações:
+5. Configurar o banco de dados: Certifique-se de estar com o XAMPP (Apache e MySQL) rodando.
 
 ```bash
 php artisan migrate
 ```
 
-6. Execute o comando para executar o servidor com Laravel
+6. Iniciar o servidor:
 
 ```bash
 php artisan serve
 ```
 
-7. O servidor estará executando na porta 8000
+O servidor estará executando na porta 8000
 
-## Configuração de Teste de Pagamento
-
-Para testar o sistema de pagamento com **Stripe** em ambiente de desenvolvimento, utilize os seguintes dados de cartão de crédito de teste fornecidos pela Stripe:
-
-- **Número do Cartão**: `4242 4242 4242 4242`
-- **CVC**: `123`
-- **Data de Expiração**: Qualquer data no futuro.
-
-Esses dados de cartão são **dados de teste** fornecidos pela Stripe e podem ser utilizados para realizar transações sem envolver dinheiro real.
-
-### Passos para Testar o Pagamento
-
-1. Certifique-se de que o Stripe está configurado corretamente no seu projeto.
-2. Use o número de cartão fornecido acima ao realizar o pagamento em qualquer endpoint de checkout configurado no sistema.
-3. Verifique que a transação é realizada com sucesso sem qualquer cobrança real.
-
-### Observações Importantes
-
-- Esses dados são exclusivos para o **modo de teste** da Stripe e não devem ser usados em um ambiente de produção.
-- Você pode testar diferentes cenários de falha com outros números de cartões de teste fornecidos pela [documentação oficial da Stripe](https://stripe.com/docs/testing).
-
-### Configuração do Stripe
-
-Para garantir que o Stripe esteja funcionando corretamente, verifique as configurações no seu arquivo `.env` ou na seção de configuração correspondente do seu projeto. Certifique-se de que as chaves da API do Stripe estão corretas e no modo de teste.
-
-```env
-STRIPE_KEY=your_test_publishable_key
-STRIPE_SECRET=your_test_secret_key
-```
 
 ### Verificação de email
 
@@ -80,9 +98,4 @@ e comentar:
 
 ```bash
 class User extends Authenticatable
-```
-
-
-
-```bash
 ```
