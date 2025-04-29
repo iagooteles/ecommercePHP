@@ -59,6 +59,10 @@ composer install
 npm install
 ```
 
+```bash
+npm run build
+```
+
 4. Configurar o .env com variáveis como:
 DB_CONNECTION, DB_HOST, DB_USERNAME, DB_PASSWORD
 APP_KEY, STRIPE_KEY, STRIPE_SECRET
